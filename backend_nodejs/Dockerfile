@@ -4,9 +4,19 @@ FROM node:latest
 # Set the working directory
 WORKDIR /nodejs
 
+# Copy the package.json and yarn.lock files
+COPY package*.json ./
+
+# Set the network timeout to a higher value (in milliseconds) to prevent timeouts during installation
+RUN yarn config set network-timeout 3000000
+# Install the application dependencies
+RUN yarn install
+
 # Copy the source code files in same level with Dockerfile to the working directory
 COPY . .
 
+# Set the network timeout to a higher value (in milliseconds) to prevent timeouts during installation
+RUN yarn config set network-timeout 3000000
 # Install the application dependencies
 RUN yarn install
 
