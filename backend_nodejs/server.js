@@ -1,6 +1,8 @@
 // setup nodejs
 // yarn add express
 // yarn install
+// yarn prisma@5.18.0 prisma/client@5.18.0
+// yarn prisma init
 // dev code....
 // node server.js => yarn start
 
