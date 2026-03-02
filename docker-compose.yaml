@@ -1,0 +1,19 @@
+version: '3' # Specify the version of Yaml Docker Compose file
+
+services: # Docker build, run, volume, network, ...
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+
+volumes:
+  volume_name:
+    driver: local
+
+networks:
+  network_name:
+    driver: bridge
